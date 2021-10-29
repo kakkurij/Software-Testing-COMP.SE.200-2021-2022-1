@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/kakkurij/Software-Testing-COMP.SE.200-2021-2022-1.svg?branch=main)](https://app.travis-ci.com/kakkurij/Software-Testing-COMP.SE.200-2021-2022-1)
+
 # Student template
 
 ## Purpose of this repository
