@@ -5,7 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "mocha "
+        "test": "mocha",
+        "coverage": "npm run pretest && jest --coverage && cat ./coverage/lcov.info | coveralls"
     },
     "pre-commit": [
         "test"
