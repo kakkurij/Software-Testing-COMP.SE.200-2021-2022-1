@@ -66,20 +66,4 @@ describe("Filter.js tests", () => {
         // expect(originalFunctionResult3).to.have.all.keys("name", "type");
         // expect(originalFunctionResult3).to.have.all.keys("name", "type");
     });
-
-    it("Original array is not modified", () => {
-        const arr = ["dog", "cat", "moose", "house"];
-        const predicate = (value, index, array) => {
-            if (value.length > 3) {
-                return true;
-            }
-
-            return false;
-        };
-
-        // Call the function and check that function does not modify the content of arr
-        filter(arr, predicate);
-
-        expect(arr).to.deep.equal(["dog", "cat", "moose", "house"]);
-    });
 });

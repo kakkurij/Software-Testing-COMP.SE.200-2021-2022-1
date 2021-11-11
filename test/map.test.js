@@ -6,12 +6,10 @@ describe("Map.js tests", () => {
         // Define data for the test case
         const arr = [1, 2, 2, 4, 8, 5];
         const iteratee = (value, index, array) => {
-            // array.pop();
             return value + index;
         };
 
         const originalFunctionResult = map(arr, iteratee);
-        // expect(map(arr, iteratee)).to.not.throw();
         expect(originalFunctionResult).to.deep.equal([1, 3, 4, 7, 12, 10]);
 
         // Check other data types
@@ -50,25 +48,8 @@ describe("Map.js tests", () => {
         // Call the function and check that function does not modify the content of arr
         const originalFunctionResult3 = map(arr3, iteratee3);
 
-        //expect(originalFunctionResult3).to.have.all.keys("name", "type");
         expect(originalFunctionResult3)
             .to.be.a("array")
             .to.have.lengthOf(arr3.length);
-
-        // expect(originalFunctionResult3).to.have.all.keys("name", "type");
-        // expect(originalFunctionResult3).to.have.all.keys("name", "type");
-    });
-
-    it("Original array is not modified", () => {
-        const arr = ["dog", "cat", "moose", "house"];
-        const arrLength = arr.length;
-        const iteratee = (value, index, array) => {
-            return {...value, index: index };
-        };
-
-        // Call the function and check that function does not modify the content of arr
-        map(arr, iteratee);
-
-        expect(arr).to.have.lengthOf(arrLength);
     });
 });
