@@ -1,4 +1,4 @@
-import { assert, expect, should } from "chai";
+import { assert, expect } from "chai";
 import map from "../src/map.js";
 
 describe("Map.js tests", () => {
