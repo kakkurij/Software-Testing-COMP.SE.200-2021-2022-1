@@ -5,18 +5,18 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "mocha",
-        "coverage": "npm run pretest && jest --coverage && cat ./coverage/lcov.info | coveralls"
+        "test": "nyc mocha",
+        "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
     },
-    "pre-commit": [
-        "test"
-    ],
     "author": "",
     "license": "MIT",
     "devDependencies": {
         "chai": "^4.3.4",
         "coveralls": "^3.1.1",
+        "istanbul": "^0.4.5",
+        "jscover": "^1.0.0",
         "mocha": "^9.1.3",
-        "mocha-lcov-reporter": "^1.3.0"
+        "mocha-lcov-reporter": "^1.3.0",
+        "nyc": "^15.1.0"
     }
 }

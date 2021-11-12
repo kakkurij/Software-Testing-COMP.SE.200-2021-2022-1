@@ -1,12 +1,24 @@
-sudo: false
 language: node_js
 node_js:
   - 14
+os:
+  - "linux"
+
+dist:
+  - xenial
+
+install:
+  - npm ci
+
+script:
+  - npm test
+
+notifications:
+  - email: false
 
 after_success:
   - ./node_modules/.bin/jscoverage lib lib-cov
   - ./node_modules/.bin/mocha test/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
 
 after_failure:
-  - ./node_modules/.bin/jscoverage lib lib-cov
-  - ./node_modules/.bin/mocha test/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+  - ./node_modules/.bin/mocha ./test/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
