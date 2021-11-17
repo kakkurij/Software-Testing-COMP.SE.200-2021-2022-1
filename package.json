@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "test": "c8 mocha ./test/*.test.js",
-        "coverage": "c8.js report --reporter=mocha-lcov-reporter | coveralls",
+        "coverage": "c8 report --reporter=mocha-lcov-reporter | coveralls",
         "coverage-test": "node c8"
     },
     "author": "",
