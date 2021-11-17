@@ -10,6 +10,7 @@ dist:
 before_install:
   - npm i c8 -g
   - npm i coveralls -g
+  - npm --version
 
 install:
   - npm install
