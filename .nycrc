@@ -3,8 +3,9 @@
         ".js"
     ],
     "include": [
-        "src/**/*.js",
-        "test/**/*.js"
+        "src/**/*.js"
     ],
-    "exclude": []
+    "exclude": [
+        "test/**/*.js"
+    ]
 }
