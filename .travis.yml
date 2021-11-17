@@ -9,13 +9,14 @@ dist:
 
 install:
   - npm install
+  - npm i c8 -g
 
 cache:
   directories:
     - "$HOME/.npm"
 
 script:
-  - npm run coverage
+  - c8 report --reporter=text-lcov | coveralls
   - npm run test
 
 notifications:

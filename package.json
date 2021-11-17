@@ -5,9 +5,9 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "c8 mocha ./test/*.test.js",
-        "coverage": "c8 mocha --reporter=mocha-lcov-reporter",
-        "coverage-test": "npm --version && nyc npm test && nyc report --reporter=mocha-lcov-reporter"
+        "test": "mocha ./test/*.test.js",
+        "coverage": "./node_modules/c8/bin/c8.js report --reporter=mocha-lcov-reporter --all | ./node_modules/coveralls/bin/coveralls.js",
+        "coverage-test": "node c8"
     },
     "author": "",
     "license": "MIT",
