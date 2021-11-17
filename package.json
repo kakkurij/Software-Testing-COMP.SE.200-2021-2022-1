@@ -5,8 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "c8 mocha ./test/*.test.js",
-        "coverage": "c8 report --reporter=mocha-lcov-reporter | coveralls",
+        "test": "./node_modules/.bin/c8 ./node_modules/.bin/mocha ./test/*.test.js",
+        "coverage": "./node_modules/.bin/c8 report --reporter=text-lcov | ./node_modules/.bin/coveralls",
         "coverage-test": "node c8"
     },
     "author": "",
