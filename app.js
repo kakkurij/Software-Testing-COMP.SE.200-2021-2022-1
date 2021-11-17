@@ -19,68 +19,69 @@ const filtered = i.filter((value, ind, arr) => {
 console.log(filtered);
 console.log(i);
 
-// const modifier = (value) => {
-//     value.push("things");
-// };
+const modifier = (value) => {
+    value.push("things");
+};
 
-// modifier(i);
-// console.log(i);
+modifier(i);
+console.log(i);
 
-// const object = { a: 1, b: 2 };
-// const other = { c: 3, d: 4 };
+const object = { a: 1, b: 2 };
+const other = { c: 3, d: 4 };
 
-// // Simulate slow function that we want to memoize
-// async function values(v) {
-//     let rv = [];
-//     await new Promise((r) => setTimeout(r, 2000)); // Simulate slow function
+// Simulate slow function that we want to memoize
+async function values(v) {
+    let rv = [];
+    await new Promise((r) => setTimeout(r, 2000)); // Simulate slow function
 
-//     for (let i in v) {
-//         rv.push(v[i]);
-//     }
+    for (let i in v) {
+        rv.push(v[i]);
+    }
 
-//     console.log("Memoization finished");
+    console.log("Memoization finished");
 
-//     return rv;
-// }
-// values = memoize(values);
-// values(object);
-// values(other);
+    return rv;
+}
+values = memoize(values);
+values(object);
+values(other);
 
-// console.log(await values(object));
-// console.log(await values(other));
+console.log(await values(object));
+console.log(await values(other));
 
-// function compact(array) {
-//     let resIndex = -1;
-//     const result = [];
+function compact(array) {
+    let resIndex = -1;
+    const result = [];
 
-//     for (const value of array) {
-//         if (value) {
-//             result[resIndex++] = value;
-//         }
-//     }
-//     return result;
-// }
+    for (const value of array) {
+        if (value) {
+            result[resIndex++] = value;
+        }
+    }
+    return result;
+}
 
-// const arr = [0, 1, 2, false, 3];
-// console.log(compact(arr));
-// console.log(compact([5, 1, false, 2, "", 3]));
-// function iteratee(value) {
-//     console.log("This was called");
-//     return value ** 2;
-// }
+const arr = [0, 1, 2, false, 3];
+console.log(compact(arr));
+console.log(compact([5, 1, false, 2, "", 3]));
 
-// console.log(
-//     map(arr, (value, i, arr) => {
-//         arr.pop();
-//         return value + i;
-//     })
-// );
+function iteratee(value) {
+    console.log("This was called");
+    return value ** 2;
+}
 
-// arr = [1, 2, 3, 4, 5];
+console.log(
+    map(arr, (value, i, arr) => {
+        arr.pop();
+        return value + i;
+    })
+);
 
-// console.log(
-//     arr.map((value, i, arr) => {
-//         arr.pop();
-//         return value + i;
-//     })
-// );
+arr = [1, 2, 3, 4, 5];
+
+console.log(
+    arr.map((value, i, arr) => {
+        arr.pop();
+        return value + i;
+    })
+);

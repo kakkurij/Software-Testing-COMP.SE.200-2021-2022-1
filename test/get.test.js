@@ -1,7 +1,7 @@
 import { assert, expect } from "chai";
 import get from "../src/get.js";
 
-describe("get.js tests", () => {
+describe("get.js tests", function() {
     it("Get object inside json list", () => {
         // Define data for the test case
         const data = { a: [{ b: { c: 3 } }] };
