@@ -8,7 +8,11 @@ dist:
   - xenial
 
 install:
-  - npm ci
+  - npm install
+
+cache:
+  directories:
+    - "$HOME/.npm"
 
 script:
   - npm run coverage
