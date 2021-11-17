@@ -11,6 +11,7 @@ install:
   - npm ci
 
 script:
+  - npm run coverage
   - npm run test
 
 notifications:
