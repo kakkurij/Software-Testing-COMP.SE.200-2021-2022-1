@@ -20,7 +20,7 @@ cache:
     - "$HOME/.npm"
 
 script:
-  - c8 report --reporter=text-lcov | coveralls
+  - ./node_modules/.bin/c8 report --reporter=text-lcov | ./node_modules/.bin/coveralls
   - npm run test
 
 notifications:
