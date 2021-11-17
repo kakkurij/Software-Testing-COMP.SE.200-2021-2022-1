@@ -7,9 +7,12 @@ os:
 dist:
   - xenial
 
+before_install:
+  - npm i c8 -g
+  - npm i coveralls -g
+
 install:
   - npm install
-  - npm i c8 -g
 
 cache:
   directories:
